@@ -23,7 +23,10 @@ tag @s add terf_manual_stabilization_failed
 
 function terf:entity/machines/stfr/broadcast {bcd:"return 1",voiceline:'stfr.manual_restab.fail',level:3,text:'{"text":"Manual Reactor Restabilization Failure! Please Activate The Stasis Laser Immediately!","color":"red"}'}
 
-function terf:entity/machines/stfr/states/overload/beam_explosion
-function terf:entity/machines/stfr/states/overload/beam_explosion
+function terf:entity/machines/stfr/states/overload/plasma_particles/explosion
+scoreboard players set terminated terf_states 2000
+data modify storage terf:temp args set from entity @s data.terf
+data modify storage terf:temp args.max_duration set value 20
+function terf:entity/machines/stfr/states/overload/shield_explosion_beams/iterate
 
 function terf:entity/machines/stfr/states/overload/summon_red_text_displays
